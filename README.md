@@ -29,6 +29,35 @@ def initialize_vertex():
     aiplatform.init(
         project=PROJECT_ID,
         location=LOCATION,
+
+🧠 Cognitive Friction & Patterns
+The "Dual SDK" Confusion: There are actually two ways to interact with Vertex in Python: vertexai and google.cloud.aiplatform.
+
+Friction: You'll see tutorials using both interchangeably.
+
+Pattern: Use vertexai for anything involving Gemini/LLMs. Use aiplatform for "infrastructure" tasks like creating endpoints or running pipelines.
+
+The "Ghost Bucket" Trap: If you don't define a staging_bucket during init, many commands will work fine until you try to upload a model or run a batch job. Then, they will fail with a vague 400 error because there is no "scratchpad" in the cloud for the SDK to use.
+
+⚠️ Pitfalls
+1. The Region Lock
+The Problem: You set your region to us-east1 because it's close to you.
+The Pitfall: New models (like Gemini 1.5 Pro or Flash updates) often roll out to us-central1 first. You will get a 404: Model not found error even if the model exists globally.
+Best Practice: Always start your learning in us-central1.
+
+2. The "Default Credentials" Headache
+The Problem: Running code in a Docker container or a CI/CD pipeline.
+The Pitfall: The code works on your laptop but fails in the container because application-default login only exists on your host machine.
+Best Practice: Use Service Account JSON keys only for production; use Workload Identity for everything else.
+
+🆘 What to do if you get in trouble
+Check Permissions: If you get a 403 Forbidden, go to the IAM console and ensure your user/service account has the Vertex AI User role.
+
+Verify the API: Run gcloud services list --enabled | grep aiplatform. If it's empty, the API isn't on.
+
+Bucket Access: Ensure your STAGING_BUCKET actually exists. The SDK will not always create it for you; you may need to run gsutil mb gs://your-bucket-name first.
+
+
         staging_bucket=STAGING_BUCKET
     )
     print(f"✅ Vertex AI initialized in {LOCATION}")
