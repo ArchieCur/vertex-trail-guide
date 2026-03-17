@@ -60,7 +60,7 @@ print(response.predictions)
 
 - If you send a raw string to an OSS model without its preferred delimiters, the output will be incoherent or "hallucinated."
 
-*The Fix:* 
+*The Fix:*  
 **Always** check the Model Garden card for the specific Prompt Template required by that publisher.
 
 ## ⚠️ Pitfalls  
@@ -71,7 +71,8 @@ print(response.predictions)
 Forgetting to "Undeploy" a model.    
 *The Pitfall:*   
 - In Gemini, you pay $0 if you don't use it.  
-- In Model Garden, you pay for the GPU every hour it is active, regardless of usage.    
+- In Model Garden, you pay for the GPU every hour it is active, regardless of usage.
+    
 **Best Practice:** Always include a cleanup() block in your code to endpoint.delete(force=True).
 
 **The "Cold Start" Wait**  
@@ -80,7 +81,8 @@ Forgetting to "Undeploy" a model.
 Expecting an OSS model to be ready in milliseconds.  
 *The Pitfall:*   
 - When you first deploy a model, Vertex has to provision hardware and load weights (often 20GB+).  
-- This can take 5–15 minutes.    
+- This can take 5–15 minutes.
+    
 **Best Practice:** Warn users that "Deploying" is a background task, not an instant one.
 
 ## 🆘 What to do if you get in trouble  
