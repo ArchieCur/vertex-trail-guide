@@ -60,7 +60,7 @@ Best Practice: Use Flash by default. Only upgrade to Pro if the logic fails.
 
 **Model Not Found:** 
 
--Ensure your region is us-central1. Many new versions of Gemini are not yet available in all regions.
+- Ensure your region is us-central1. Many new versions of Gemini are not yet available in all regions.
 
 **Empty Responses:**
 
