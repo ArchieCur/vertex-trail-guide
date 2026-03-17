@@ -1,3 +1,5 @@
+```markdown
+
 # **Module 02: Generative AI (Gemini)**
 
 In Vertex AI, the **Gemini 1.5** models are the primary engines for reasoning, transformation, and generation. This module covers how to move from "chatting" to building reliable, structured applications.
@@ -18,6 +20,7 @@ Users often expect the model to "know" their intent instinctively. However, mode
 
 ## 🛠️ Essential Code: Structured JSON Output
 In production, you rarely want a "paragraph" from a model. You want **data**. Gemini 1.5 allows you to force a JSON response.
+```
 
 ```python
 import vertexai
