@@ -1,6 +1,4 @@
-```markdown
-
-# **Module 02: Generative AI (Gemini)**
+**Module 02: Generative AI (Gemini)**
 
 In Vertex AI, the **Gemini 1.5** models are the primary engines for reasoning, transformation, and generation. This module covers how to move from "chatting" to building reliable, structured applications.
 
