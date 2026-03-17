@@ -53,14 +53,14 @@ print(response.text)
 
 3. **Flash vs. Pro Usage**
 *The Problem:* Using gemini-1.5-pro for simple tasks.  
-*The Pitfall:* Pro is 10x more expensive than Flash. Flash is optimized for speed and high-volume tasks like summarization.  
+*The Pitfall:* Pro is 10x more expensive than Flash. Flash is optimized for speed and high-volume tasks like summarization.    
 **Best Practice:** Use Flash by default. Only upgrade to Pro if the logic fails.
 
 🆘 **What to do if you get in trouble**
 
 **Model Not Found:** 
 
-- Ensure your region is us-central1. Many new versions of Gemini are not yet available in all regions.
+- Ensure your region is correct. Many new versions of Gemini are not yet available in all regions.
 
 **Empty Responses:**
 
