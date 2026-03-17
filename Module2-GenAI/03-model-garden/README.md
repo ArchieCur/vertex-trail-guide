@@ -25,7 +25,9 @@ from google.cloud import aiplatform
 
 ### 1. Point to the Model in the Garden  
 
-<model_name = "projects/cloudaidemo/locations/us-central1/publishers/meta/models/llama3-8b">
+```python
+model_name = "projects/cloudaidemo/locations/us-central1/publishers/meta/models/llama3-8b"
+```
 
 ### 2. Deploy to an Endpoint (This creates a 'Server')  
 
