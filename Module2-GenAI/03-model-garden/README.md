@@ -15,20 +15,22 @@ This is the single biggest mental hurdle for new Vertex users.
 
 ---
 
-## 🛠️ Essential Code: Deploying from the Garden
+## 🛠️ Essential Code: Deploying from the Garden  
+
 To use an OSS model, you follow a three-step pattern: **Select -> Deploy -> Predict.**
 
 ```python
 from google.cloud import aiplatform
 ```
 
-# 1. Point to the Model in the Garden  
+### 1. Point to the Model in the Garden  
 
 <model_name = "projects/cloudaidemo/locations/us-central1/publishers/meta/models/llama3-8b">
 
-# 2. Deploy to an Endpoint (This creates a 'Server')  
+### 2. Deploy to an Endpoint (This creates a 'Server')  
 
-# WARNING: This starts the billing clock!  
+**WARNING: This starts the billing clock!**  
+
 ```python
 endpoint = aiplatform.Endpoint.create(display_name="llama3-endpoint")
 
@@ -40,7 +42,7 @@ deployed_model = endpoint.deploy(
 )
 ```
 
-# 3. Get a Prediction
+### 3. Get a Prediction
 
 ```python
 response = endpoint.predict(instances=[{"prompt": "Explain black holes like I'm five."}])
