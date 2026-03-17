@@ -46,15 +46,15 @@ print(response.text)
 
 ⚠️ **Pitfalls**
 
-1. **The "Candidate" Error**
-The Problem: Accessing response.text when a prompt is blocked.
-The Pitfall: If the model blocks a response for safety, response.text will raise an exception.
-Best Practice: Check if response.candidates[0].finish_reason == "SAFETY": before parsing.
+1. **The "Candidate" Error**  
+*The Problem:* Accessing response.text when a prompt is blocked.  
+*The Pitfall:* If the model blocks a response for safety, response.text will raise an exception.
+**Best Practice:** Check if response.candidates[0].finish_reason == "SAFETY": before parsing.
 
-2. **Flash vs. Pro Usage**
-The Problem: Using gemini-1.5-pro for simple tasks.
-The Pitfall: Pro is 10x more expensive than Flash. Flash is optimized for speed and high-volume tasks like summarization.
-Best Practice: Use Flash by default. Only upgrade to Pro if the logic fails.
+3. **Flash vs. Pro Usage**
+*The Problem:* Using gemini-1.5-pro for simple tasks.  
+*The Pitfall:* Pro is 10x more expensive than Flash. Flash is optimized for speed and high-volume tasks like summarization.  
+**Best Practice:** Use Flash by default. Only upgrade to Pro if the logic fails.
 
 🆘 **What to do if you get in trouble**
 
