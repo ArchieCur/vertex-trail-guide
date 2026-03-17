@@ -1,13 +1,17 @@
 # Module 03: The Model Garden (OSS Models)
 
-Vertex AI isn't just for Google models. The **Model Garden** allows you to deploy Open Source Software (OSS) models like Llama, Mistral, and BERT. However, the "Rules of Engagement" change significantly when you leave the Gemini ecosystem.
+Vertex AI isn't just for Google models.  
+The **Model Garden** allows you to deploy Open Source Software (OSS) models like Llama, Mistral, and BERT.  
+However, the "Rules of Engagement" change significantly when you leave the Gemini ecosystem.
 
 ## 🧠 Cognitive Friction: Serverless vs. Provisioned
 This is the single biggest mental hurdle for new Vertex users.
 
 * **Gemini (Serverless):** You call an API, pay per token, and Google handles the "servers." It is always on and scales instantly.
-* **Model Garden (Provisioned):** To use an OSS model, you must **deploy it to an Endpoint**. This creates a dedicated virtual server (GPU/TPU) that stays on until you delete it.
-* **The Friction:** Users often deploy a Llama model to "test it out," forget to delete the endpoint, and wake up to a massive bill for a GPU that sat idle all night.
+* **Model Garden (Provisioned):** To use an OSS model, you must **deploy it to an Endpoint**.
+  - This creates a dedicated virtual server (GPU/TPU) that stays on until you delete it.
+* **The Friction:** Users often deploy a Llama model to "test it out," forget to delete the endpoint,
+  and wake up to a massive bill for a GPU that sat idle all night.
 
 ---
 
