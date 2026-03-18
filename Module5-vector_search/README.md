@@ -75,10 +75,10 @@ my_index_endpoint.deploy_index(
 
 ## 🆘 What to do if you get in trouble  
 
-1. Index is "Stuck" in Building:
+1. **Index is "Stuck" in Building:**
 - Large indexes take time.
-- Check the Batch Predictions or Vector Search tab in the console to see the progress bar.
+- Check the **Batch Predictions** or **Vector Search tab** in the console to see the progress bar.
 
-2. Empty Results:
+2. **Empty Results:**
 - Ensure your JSON files in GCS follow the exact format: {"id": "1", "embedding": [0.1, 0.2, ...],
 "restricts": [...]}. A single missing comma will cause the indexer to skip the file silently.
